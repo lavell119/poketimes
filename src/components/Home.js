@@ -1,12 +1,21 @@
-import React from 'react'
+import React, { Component } from 'react'
+import axios from 'axios'
 
-const Home = () => {
+class Home extends Component {
+    componentDidMount() {
+        //fetch JSON-Placeholder data using Axios
+        axios.get('https://jsonplaceholder.typicode.com/posts')
+            .then(res => {
+                console.log(res)
+            })
+    }
+    render() {
     return (
         <div className="container">
             <h4 className="center">Home</h4>
             <p>Lorem   kfnowe eklwg nkw g</p>
         </div>
-    )
+    )}
 }
 
 export default Home
